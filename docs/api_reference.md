@@ -16,7 +16,7 @@ Standard Ordinary Least Squares solver with ElasticNet $(L1/L2)$ regularization 
   - `method='gradient'`: $O(k \cdot n \cdot m)$ per $k$ iterations.
 - **Usage Example**:
   ```python
-  from ml_from_scratch.linear import LinearRegression
+  from pure_ml.linear import LinearRegression
   model = LinearRegression(method='gradient', alpha=0.01)
   model.fit(X_train, y_train)
   y_hat = model.predict(X_test)
@@ -36,7 +36,7 @@ Fully-connected modular Neural Network optimized for multi-class objectives.
 - **Architectural Note**: Uses "He Normal" initialization to maintain signal variance $\text{Var}(a) = \frac{2}{n_{in}}$.
 - **Usage Example**:
   ```python
-  from ml_from_scratch.neural import MLPClassifier
+  from pure_ml.neural import MLPClassifier
   # Elite Deep Arch: 256 -> 128 -> 10
   clf = MLPClassifier(hidden_layers=[256, 128], activations=['relu', 'relu'])
   clf.fit(X, y)

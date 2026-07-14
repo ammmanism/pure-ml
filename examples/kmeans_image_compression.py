@@ -5,7 +5,7 @@ Example script demonstrating K-Means for image compression.
 import numpy as np
 from sklearn.datasets import load_sample_image
 from sklearn.metrics import mean_squared_error
-from src.engine.unsupervised.kmeans import KMeans
+from pure_ml.unsupervised.kmeans import KMeans
 
 
 def main():

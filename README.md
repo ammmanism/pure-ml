@@ -1,17 +1,17 @@
 <!-- markdownlint-disable MD033 MD041 MD013 -->
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ammmanism/ml-from-scratch-lab/main/docs/assets/banner.png" alt="ML From Scratch Lab" width="800">
+  <img src="https://raw.githubusercontent.com/ammmanism/pure-ml/main/docs/assets/banner.png" alt="Pure-ML" width="800">
 </p>
 
-<h1 align="center">🧠 ML From Scratch Lab</h1>
+<h1 align="center">🧠 Pure-ML</h1>
 <h3 align="center"><i>Implementing Machine Learning from First Principles with NumPy</i></h3>
 
 <p align="center">
-  <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/python-3.9%2B-blue?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.9+"></a>
+  <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/python-3.10%2B-blue?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.10+"></a>
   <a href="https://numpy.org/"><img src="https://img.shields.io/badge/NumPy-1.24+-green?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy"></a>
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="MIT License"></a>
   <a href="https://github.com/psf/black"><img src="https://img.shields.io/badge/code%20style-black-000000?style=for-the-badge" alt="Code style: black"></a>
-  <a href="https://github.com/ammmanism/ml-from-scratch-lab/actions"><img src="https://img.shields.io/github/actions/workflow/status/ammmanism/ml-from-scratch-lab/test.yml?style=for-the-badge&logo=github" alt="CI Status"></a>
+  <a href="https://github.com/ammmanism/pure-ml/actions"><img src="https://img.shields.io/github/actions/workflow/status/ammmanism/pure-ml/test.yml?style=for-the-badge&logo=github" alt="CI Status"></a>
   <a href="https://codecov.io/gh/ammmanism/ml-from-scratch-lab"><img src="https://img.shields.io/codecov/c/github/ammmanism/ml-from-scratch-lab?style=for-the-badge&logo=codecov" alt="Code Coverage"></a>
   <a href="https://github.com/ammmanism/ml-from-scratch-lab/stargazers"><img src="https://img.shields.io/github/stars/ammmanism/ml-from-scratch-lab?style=for-the-badge&logo=github" alt="GitHub Stars"></a>
   <a href="https://colab.research.google.com/github/ammmanism/ml-from-scratch-lab"><img src="https://img.shields.io/badge/Open%20in-Colab-F9AB00?style=for-the-badge&logo=googlecolab" alt="Open In Colab"></a>
@@ -89,7 +89,7 @@ graph TB
         B --> B5[04_transformers]
         B --> B6[05_experiments]
         
-        C[src/ml_from_scratch/] --> C1[core/]
+        C[src/pure_ml/] --> C1[core/]
         C --> C2[optimizers/]
         C --> C3[models/]
         C --> C4[neural/]
@@ -122,7 +122,7 @@ graph TB
 |------|-------------|
 | `.github/workflows/` | CI/CD pipelines: test, notebook validation, doc deployment |
 | `notebooks/` | Interactive learning path (40+ Jupyter notebooks) |
-| `src/ml_from_scratch/` | Core library (installable package) |
+| `src/pure_ml/` | Core library (installable package) |
 | `tests/` | Unit & integration tests |
 | `benchmarks/` | Performance & correctness benchmarks against scikit-learn |
 | `examples/` | Standalone usage scripts |
@@ -177,7 +177,7 @@ pip install -r requirements-dev.txt
 
 #### 5. Verify Installation
 ```bash
-python -c "from ml_from_scratch import __version__; print(__version__)"
+python -c "from pure_ml import __version__; print(__version__)"
 ```
 
 ### Docker (Alternative)
@@ -195,9 +195,9 @@ Click the "Open in Colab" badge at the top to run notebooks directly in your bro
 
 ### Linear Regression from Scratch
 ```python
-from ml_from_scratch.models import LinearRegression
-from ml_from_scratch.datasets import make_regression
-from ml_from_scratch.utils import train_test_split
+from pure_ml.models import LinearRegression
+from pure_ml.datasets import make_regression
+from pure_ml.utils import train_test_split
 
 # Generate synthetic data
 X, y = make_regression(n_samples=100, n_features=5, noise=0.1)
@@ -215,9 +215,9 @@ print(f"Test MSE: {mse:.4f}")
 
 ### Logistic Regression for Classification
 ```python
-from ml_from_scratch.models import LogisticRegression
-from ml_from_scratch.datasets import make_classification
-from ml_from_scratch.metrics import accuracy_score
+from pure_ml.models import LogisticRegression
+from pure_ml.datasets import make_classification
+from pure_ml.metrics import accuracy_score
 
 X, y = make_classification(n_samples=200, n_features=10, n_classes=2)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
@@ -230,10 +230,10 @@ print("Accuracy:", accuracy_score(y_test, y_pred))
 
 ### Multilayer Perceptron (MLP) on MNIST
 ```python
-from ml_from_scratch.neural import Model, Dense, ReLU, Softmax
-from ml_from_scratch.optimizers import Adam
-from ml_from_scratch.losses import CrossEntropy
-from ml_from_scratch.datasets import load_mnist
+from pure_ml.neural import Model, Dense, ReLU, Softmax
+from pure_ml.optimizers import Adam
+from pure_ml.losses import CrossEntropy
+from pure_ml.datasets import load_mnist
 
 # Load data (or use synthetic)
 X_train, y_train, X_test, y_test = load_mnist(normalize=True)
@@ -261,7 +261,7 @@ print("Test Accuracy:", accuracy_score(y_test, y_pred))
 
 ### Simple Transformer Block
 ```python
-from ml_from_scratch.neural.layers import MultiHeadAttention, FeedForward
+from pure_ml.neural.layers import MultiHeadAttention, FeedForward
 import numpy as np
 
 # Example sequence: batch=2, seq_len=5, dim=16
@@ -534,7 +534,7 @@ We welcome contributions from everyone! Whether you're fixing a bug, adding a ne
 - Write docstrings in [Google format](https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings).
 
 ### Adding a New Model
-- Place the model in the appropriate subdirectory under `src/ml_from_scratch/`.
+- Place the model in the appropriate subdirectory under `src/pure_ml/`.
 - Inherit from `BaseModel` if applicable.
 - Implement `fit` and `predict` methods.
 - Add unit tests in `tests/`.

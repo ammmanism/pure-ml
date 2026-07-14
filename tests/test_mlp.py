@@ -4,7 +4,7 @@ Tests for MLP implementation in the ML From Scratch library.
 
 import numpy as np
 import pytest
-from src.engine.neural.mlp import MLPClassifier
+from pure_ml.neural.mlp import MLPClassifier
 
 
 def test_mlp_shapes():

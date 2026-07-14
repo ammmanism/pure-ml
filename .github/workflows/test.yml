@@ -32,7 +32,7 @@ jobs:
     - name: Static Analysis (Linting & Typing)
       run: |
         black . --check
-        flake8 src/ tests/
+        ruff check .
         mypy src/
         
     - name: Run Tests with Coverage and Parallelism

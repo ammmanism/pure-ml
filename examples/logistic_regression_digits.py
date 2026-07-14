@@ -5,8 +5,8 @@ Example script demonstrating Logistic Regression on the Digits dataset.
 import numpy as np
 from sklearn.datasets import load_digits
 from sklearn.metrics import accuracy_score
-from src.engine.linear.logistic_regression import LogisticRegression
-from src.engine.utils import train_test_split
+from pure_ml.linear.logistic_regression import LogisticRegression
+from pure_ml.utils import train_test_split
 
 
 def main():

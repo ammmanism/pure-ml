@@ -24,7 +24,7 @@ High-level frameworks (PyTorch/Scikit-Learn) are tools for **production**, but t
 ### 2. Standardized API Interface
 We strictly adhere to the **Scikit-Learn API Pattern** (`fit`, `predict`, `predict_proba`).
 - **Reasoning**: This allows our "pure" models to be tested directly against industry-standard benchmarks. 
-- **Benefit**: You can swap `sklearn.linear_model.LogisticRegression` for `ml_from_scratch.linear.LogisticRegression` in any pipeline to verify correctness.
+- **Benefit**: You can swap `sklearn.linear_model.LogisticRegression` for `pure_ml.linear.LogisticRegression` in any pipeline to verify correctness.
 
 ### 3. Modular Layer Blocks
 In our `neural` module, we treat layers as standalone mathematical units.

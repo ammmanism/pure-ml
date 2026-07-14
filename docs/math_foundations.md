@@ -50,7 +50,7 @@ For our `DecisionTree` implementation, we choose between these two purity metric
 - **The Connection**: Gini is actually a first-order Taylor approximation of Entropy. We use Gini by default because it avoids the expensive `log` operation.
 
 ### 3.2 Maximum Likelihood Estimation (MLE)
-Every model in `src/ml_from_scratch/linear` is an MLE solver. By minimizing the Negative Log-Likelihood (NLL), we are effectively finding the parameters that make the observed data "most probable."
+Every model in `src/pure_ml/linear` is an MLE solver. By minimizing the Negative Log-Likelihood (NLL), we are effectively finding the parameters that make the observed data "most probable."
 
 ---
 
